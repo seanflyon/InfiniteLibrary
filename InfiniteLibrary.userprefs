@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Board.cs">
+    <Files>
+      <File FileName="Assets\Global.cs" Line="8" Column="1" />
+      <File FileName="Assets\Rune.cs" Line="78" Column="39" />
+      <File FileName="Assets\Board.cs" Line="54" Column="41" />
+      <File FileName="Assets\NullRune.cs" Line="18" Column="3" />
+      <File FileName="Assets\VirtualRune.cs" Line="4" Column="50" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
