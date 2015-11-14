@@ -46,9 +46,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Board.cs" />
+     <Compile Include="Assets\DragHandler.cs" />
      <Compile Include="Assets\Global.cs" />
+     <Compile Include="Assets\Inventory.cs" />
      <Compile Include="Assets\NullRune.cs" />
      <Compile Include="Assets\Rune.cs" />
+     <Compile Include="Assets\Scroll.cs" />
+     <Compile Include="Assets\Slot.cs" />
      <Compile Include="Assets\VirtualRune.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

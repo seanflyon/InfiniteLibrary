@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Rune : VirtualRune {
 
-	public Board board;
+	//public Board board;
+	public Scroll scroll;
 
 	public float damage;
 
@@ -40,10 +41,7 @@ public class Rune : VirtualRune {
 		}
 	}
 
-	public void init (Board board, int x, int y) {
-		this.board = board;
-		this.x = x;
-		this.y = y;
+	public void init () {
 		damage = Random.Range (0f, 100f);
 
 		westProb = Random.Range (0f, 1f);
@@ -64,8 +62,14 @@ public class Rune : VirtualRune {
 		westProb = eastProb + westProb / sum;
 	}
 
-	public void init (Board board, int x, int y, Board.RuneDescriptor desc) {
-		this.board = board;
+	public void place (Scroll scroll, int x, int y) {
+		this.scroll = scroll;
+		this.x = x;
+		this.y = y;
+	}
+
+	/*public void init (Scroll scroll, int x, int y, Board.RuneDescriptor desc) {
+		this.scroll = scroll;
 		this.x = x;
 		this.y = y;
 		damage = desc.damage;
@@ -76,7 +80,7 @@ public class Rune : VirtualRune {
 		southProb = northProb + desc.southProb;
 		eastProb = southProb + desc.eastProb;
 		westProb = eastProb + desc.westProb;
-	}
+	}*/
 
 	private void setNextRune(VirtualRune rune) {
 		nextRune = rune;
@@ -87,19 +91,19 @@ public class Rune : VirtualRune {
 
 	override public void Activate () {
 		Debug.Log ("Rune " + x.ToString() + ", " + y.ToString() + " Deal " + damage.ToString() + " damage");
-		board.damageSoFar += damage;
+		scroll.damageSoFar += damage;
 		float roll = Random.Range (0f, 1f);
 		if (roll < northProb) {
-			setNextRune (board.getRune (x, y + 1));
+			setNextRune (scroll.getRune (x, y + 1));
 		} else if (roll < southProb) {
-			setNextRune (board.getRune (x, y - 1));
+			setNextRune (scroll.getRune (x, y - 1));
 		} else if (roll < eastProb) {
-			setNextRune (board.getRune (x - 1, y));
+			setNextRune (scroll.getRune (x - 1, y));
 		} else if (roll <  westProb) {
-			setNextRune (board.getRune (x + 1, y));
+			setNextRune (scroll.getRune (x + 1, y));
 		} else {
 			Debug.Log("Exit");
-			setNextRune(board.getRune (-1, -1));
+			setNextRune(scroll.getRune (-1, -1));
 		}
 	}
 

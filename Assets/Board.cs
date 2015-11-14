@@ -64,7 +64,7 @@ public class Board : MonoBehaviour {
 		int x = count / width;
 		GameObject runeObject = (GameObject)Instantiate (runePrefab, new Vector3 (x, y, 0), Quaternion.identity);
 		Rune rune = runeObject.GetComponent<Rune> ();
-		rune.init (this, x, y, desc);
+		//rune.init (this, x, y, desc);
 		count++;
 		return rune;
 	}
