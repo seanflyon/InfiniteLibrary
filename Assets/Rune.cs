@@ -33,8 +33,10 @@ public class Rune : VirtualRune {
 		if (null != nextRune) {
 
 			timeUntilNextRune -= Time.deltaTime;
+			transform.localPosition = Random.insideUnitCircle * 5f;
 			if (timeUntilNextRune <= 0) {
-				transform.GetChild (0).gameObject.SetActive(false);
+				//transform.GetChild (0).gameObject.SetActive(false);
+				transform.localPosition = Vector3.zero;
 				nextRune.Activate ();
 				nextRune = null;
 			}
@@ -86,7 +88,7 @@ public class Rune : VirtualRune {
 		nextRune = rune;
 		Debug.DrawLine (transform.position, nextRune.transform.position, Color.green, waitTime);
 		timeUntilNextRune = waitTime;
-		transform.GetChild (0).gameObject.SetActive(true);
+		//transform.GetChild (0).gameObject.SetActive(true);
 	}
 
 	override public void Activate () {

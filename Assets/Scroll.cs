@@ -25,6 +25,7 @@ public class Scroll : MonoBehaviour {
 	public VirtualRune getRune (int x, int y) {
 		if (x >= 0 && x < width && y >= 0 && y < height) {
 			int n = (y*width + x);
+			Debug.Log("getRune x: " + x + " y: " + y + " -> " + n);
 			Debug.Log(transform.GetChild(n));
 			if (transform.GetChild(n).childCount > 0) {
 				return transform.GetChild(n).GetChild(0).gameObject.GetComponent<Rune>();
